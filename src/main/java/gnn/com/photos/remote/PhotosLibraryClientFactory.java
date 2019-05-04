@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package gnn.com.photos.remote;
+
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -37,7 +39,7 @@ import java.security.GeneralSecurityException;
 import java.util.List;
 
 /** A factory class that helps initialize a {@link PhotosLibraryClient} instance. */
-public class PhotosLibraryClientFactory {
+class PhotosLibraryClientFactory {
   private static final java.io.File DATA_STORE_DIR =
       new java.io.File(PhotosLibraryClientFactory.class.getResource("/").getPath(), "credentials");
   private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
@@ -46,7 +48,7 @@ public class PhotosLibraryClientFactory {
   private PhotosLibraryClientFactory() {}
 
   /** Creates a new {@link PhotosLibraryClient} instance with credentials and scopes. */
-  public static PhotosLibraryClient createClient(
+  static PhotosLibraryClient createClient(
       String credentialsPath, List<String> selectedScopes)
       throws IOException, GeneralSecurityException {
     PhotosLibrarySettings settings =
