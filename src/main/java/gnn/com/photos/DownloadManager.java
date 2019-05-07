@@ -28,7 +28,7 @@ public class DownloadManager {
         System.out.println("downloaded count = " + count);
     }
 
-    private static String getFileExtension() {
+    public static String getFileExtension() {
         // TODO: 06/05/2019 manage file extension from mimeType
         return ".jpg";
     }

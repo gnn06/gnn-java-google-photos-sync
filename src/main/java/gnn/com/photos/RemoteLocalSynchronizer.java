@@ -36,13 +36,15 @@ public class RemoteLocalSynchronizer {
         System.out.println("to delete count = " + this.toDelete.size());
     }
 
-    private ArrayList calculToDelete() {
-        return new ArrayList();
-    }
-
-    public ArrayList<Photo> calculToDownload() {
+   public ArrayList<Photo> calculToDownload() {
         ArrayList result = ((ArrayList)this.remote.clone());
         result.removeAll(this.local);
+        return result;
+    }
+
+    private ArrayList calculToDelete() {
+        ArrayList result = ((ArrayList)this.local.clone());
+        result.removeAll(this.remote);
         return result;
     }
 

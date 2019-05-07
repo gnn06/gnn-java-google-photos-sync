@@ -16,7 +16,7 @@ public class CLI {
         try {
             PhotosRemoteService prs = new PhotosRemoteService();
             PhotosLocalService pls = new PhotosLocalService();
-            ArrayList remote = prs.getRemotePhotos("Wallpaper");
+            ArrayList remote = prs.getRemotePhotos("test");
             ArrayList local = pls.getLocalPhotos(folder);
             RemoteLocalSynchronizer sync = new RemoteLocalSynchronizer(remote, local);
             pls.delete(sync.getToDelete(), folder);
