@@ -1,11 +1,11 @@
 package gnn.com.photos.remote;
 
-import com.google.api.client.util.Lists;
 import com.google.common.collect.ImmutableList;
 import com.google.photos.library.v1.PhotosLibraryClient;
 import com.google.photos.library.v1.internal.InternalPhotosLibraryClient;
 import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.MediaItem;
+import gnn.com.photos.model.Photo;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -25,7 +25,7 @@ public class PhotosRemoteService {
         this.client = PhotosLibraryClientFactory.createClient("./client_secret.json", REQUIRED_SCOPES);
     }
 
-    public List getRemotePhotos(String albumName) {
+    public ArrayList getRemotePhotos(String albumName) {
 
         InternalPhotosLibraryClient.ListAlbumsPagedResponse response = client.listAlbums();
         for (Album album : response.iterateAll()) {
@@ -35,10 +35,10 @@ public class PhotosRemoteService {
                 //System.out.println("albumId=" + albumId);
                 InternalPhotosLibraryClient.SearchMediaItemsPagedResponse responsePhotos = client.searchMediaItems(albumId);
                 int count = 0;
-                List result = new ArrayList();
+                ArrayList result = new ArrayList();
                 for (MediaItem item : responsePhotos.iterateAll()) {
                     String filename = item.getFilename();
-                    result.add(item);
+                    result.add(new Photo(item.getBaseUrl(), item.getId()));
                     count++;
                 }
                 System.out.println("count=" + count);

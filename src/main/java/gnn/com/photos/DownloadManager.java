@@ -1,26 +1,31 @@
 package gnn.com.photos;
 
-import com.google.photos.library.v1.proto.MediaItem;
+import gnn.com.photos.model.Photo;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
+import java.util.ArrayList;
 
 public class DownloadManager {
-    public static void download(List<MediaItem> toDownload, String folder) throws IOException {
-        for (MediaItem photo : toDownload) {
+
+    public static void download(ArrayList<Photo> toDownload, String folder) throws IOException {
+        int count = 0;
+        for (Photo photo : toDownload) {
             URL source;
             try {
-                source = new URL(photo.getBaseUrl());
+                // TODO: 06/05/2019 manage downloading photo resolution
+                source = new URL(photo.getUrl());
                 File destination = new File(folder, photo.getId() + getFileExtension());
                 FileUtils.copyURLToFile(source, destination);
+                count++;
             } catch (MalformedURLException e) {
                 // TODO: 06/05/2019 log instead of stderr
                 System.err.println("erreur " + photo + e.getMessage());
             }
         }
+        System.out.println("downloaded count = " + count);
     }
 
     private static String getFileExtension() {

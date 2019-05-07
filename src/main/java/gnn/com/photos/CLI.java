@@ -1,13 +1,11 @@
 package gnn.com.photos;
 
-import com.google.photos.library.v1.proto.MediaItem;
 import gnn.com.photos.local.PhotosLocalService;
 import gnn.com.photos.remote.PhotosRemoteService;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 public class CLI {
 
@@ -18,8 +16,8 @@ public class CLI {
         try {
             PhotosRemoteService prs = new PhotosRemoteService();
             PhotosLocalService pls = new PhotosLocalService();
-            List remote = prs.getRemotePhotos("Wallpaper");
-            List local = pls.getLocalPhotos();
+            ArrayList remote = prs.getRemotePhotos("Wallpaper");
+            ArrayList local = pls.getLocalPhotos(folder);
             RemoteLocalSynchronizer sync = new RemoteLocalSynchronizer(remote, local);
             pls.delete(sync.getToDelete(), folder);
             DownloadManager.download(sync.getToDownload(), folder);
