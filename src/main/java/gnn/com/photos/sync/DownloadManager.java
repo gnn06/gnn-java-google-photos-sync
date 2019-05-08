@@ -1,4 +1,4 @@
-package gnn.com.photos;
+package gnn.com.photos.sync;
 
 import gnn.com.photos.model.Photo;
 import org.apache.commons.io.FileUtils;

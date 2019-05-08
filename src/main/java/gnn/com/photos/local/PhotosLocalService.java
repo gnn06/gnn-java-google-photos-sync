@@ -1,8 +1,7 @@
 package gnn.com.photos.local;
 
-import gnn.com.photos.DownloadManager;
+import gnn.com.photos.sync.DownloadManager;
 import gnn.com.photos.model.Photo;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;

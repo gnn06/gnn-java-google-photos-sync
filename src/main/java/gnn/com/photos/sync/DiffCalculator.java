@@ -1,10 +1,10 @@
-package gnn.com.photos;
+package gnn.com.photos.sync;
 
 import gnn.com.photos.model.Photo;
 
 import java.util.ArrayList;
 
-public class RemoteLocalSynchronizer {
+public class DiffCalculator {
 
     private ArrayList remote;
     private ArrayList local;
@@ -23,7 +23,7 @@ public class RemoteLocalSynchronizer {
      * @param  local
      * @return
      */
-    public RemoteLocalSynchronizer(ArrayList remote, ArrayList local) {
+    public DiffCalculator(ArrayList remote, ArrayList local) {
         this.remote = remote;
         this.local = local;
         // TODO: 06/05/2019 determine delta
