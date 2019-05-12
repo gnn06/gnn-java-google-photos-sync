@@ -1,0 +1,19 @@
+{
+      "id": "ADoMfeTJfJ8skjPDO3NaftX0y2XSI5sM7fBBhcuySI6Wlkht7iyYRQ9GB-kUjbvvfIPxJGz2bk8bGr-sTxnlVWhvs3iLeGtnbg",
+      "productUrl": "https://photos.google.com/lr/photo/ADoMfeTJfJ8skjPDO3NaftX0y2XSI5sM7fBBhcuySI6Wlkht7iyYRQ9GB-kUjbvvfIPxJGz2bk8bGr-sTxnlVWhvs3iLeGtnbg",
+      "baseUrl": "https://lh3.googleusercontent.com/lr/AGWb-e68Te55ttHQDAIoDt52tCBZ_QwJcFHWpI4s7FtdniapFHboj9ObWeFcee0KssKFlKwo4Q6RMCz--5JoaA4ce11RugOcrybjCswpJLOxKRzYoXXEjatwDNPudj91KGwxfSqR8hCqB0btGc1_S87UQOJrwFNf0lFnMY377mh07-x58SFwa7q-DoCD1A7pUril7wtDxhuXR5E9qnb5Rx9rT5onMix4liWfD7yn9_xp-XjdtfCMUKlVEHheVIDrav2jZJzO0J4Qbtj6eUMCreu_ZdOiaKp1XYgTZA2zcI8Majb4ua71JSRDYowU7yFs1gYwufskMcl1vprvJduksf-9Jbu5FaYUEj59DtxiKk7ZSnyzq9QG4FMonFeMAZaGKHyfP90lp3MxuvT51cPZhArW22aRq0tTMzLcSy4Sp2uORO7FjOf7iIU8j_FU1lGy6kX29DDQ1pZrcIPKuruj-XApYRtUPBqPvMzMJ3yN74yYpdBMMiEUn2KAUseA1PdCHTbaUn2TkcslTpJaZk8m80FCBTniAbPRsfGpJ9A3WamoVcpJqeC1tQPLpeBw7AVKF3ochjl5XdDXxnMIcjDwplD1R9h1_TKOLGbdNrT2gq0ydcsOpozf0yp2uXyNgAXknYik4lt-RqSqgGf9vvY1KkX_l6lQgr899AohHVsjNF5pFs9IFTsErPZFNtT3Cz1UHs1xEM0mYvhBn0dMnoaKiD3uxHC5W7reG_BgXHFudpPqqS7t3JguOOOc_nE03EfOJn7bvMmWIShelhO0bsfYgqesIYlydVuOlkYL9CoumBK0UrD_nsal893b-zYGQaYFGtl_mRF-qAzqtbtR0KRH8ocTQoK_XGU_skOhpQ",
+      "mimeType": "image/jpeg",
+      "mediaMetadata": {
+        "creationTime": "2019-05-01T13:34:53Z",
+        "width": "4032",
+        "height": "3016",
+        "photo": {
+          "cameraMake": "HUAWEI",
+          "cameraModel": "HUAWEI CAN-L11",
+          "focalLength": 4.26,
+          "apertureFNumber": 2.2,
+          "isoEquivalent": 50
+        }
+      },
+      "filename": "IMG_20190501_153453.jpg"
+    }
