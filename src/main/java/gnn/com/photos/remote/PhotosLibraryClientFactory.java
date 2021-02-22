@@ -32,6 +32,7 @@ import com.google.auth.oauth2.UserCredentials;
 import com.google.photos.library.v1.PhotosLibraryClient;
 import com.google.photos.library.v1.PhotosLibrarySettings;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,7 +44,7 @@ import java.util.List;
  */
 class PhotosLibraryClientFactory {
     private static final java.io.File DATA_STORE_DIR =
-            new java.io.File(PhotosLibraryClientFactory.class.getResource("/").getPath(), "credentials");
+            new java.io.File(new File("src/resources").getAbsolutePath(), "credentials");
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final int LOCAL_RECEIVER_PORT = 61984;
 
@@ -67,6 +68,7 @@ class PhotosLibraryClientFactory {
 
     private static Credentials getUserCredentials(String credentialsPath, List<String> selectedScopes)
             throws IOException, GeneralSecurityException {
+        System.out.println(DATA_STORE_DIR);
         GoogleClientSecrets clientSecrets =
                 GoogleClientSecrets.load(
                         JSON_FACTORY, new InputStreamReader(new FileInputStream(credentialsPath)));

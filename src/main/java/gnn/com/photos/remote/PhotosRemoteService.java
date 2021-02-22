@@ -22,7 +22,7 @@ public class PhotosRemoteService {
                     "https://www.googleapis.com/auth/photoslibrary.appendonly");
 
     public PhotosRemoteService() throws IOException, GeneralSecurityException {
-        this.client = PhotosLibraryClientFactory.createClient("./client_secret.json", REQUIRED_SCOPES);
+        this.client = PhotosLibraryClientFactory.createClient("./code_secret_client.json", REQUIRED_SCOPES);
     }
 
     public ArrayList getRemotePhotos(String albumName) {
@@ -45,6 +45,7 @@ public class PhotosRemoteService {
                 return result;
             }
         }
+        System.err.println("album not found");
         return null;
     }
 
