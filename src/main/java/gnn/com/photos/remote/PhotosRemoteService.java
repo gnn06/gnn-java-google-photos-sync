@@ -4,7 +4,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.photos.library.v1.PhotosLibraryClient;
 import com.google.photos.library.v1.internal.InternalPhotosLibraryClient;
 import com.google.photos.library.v1.proto.Album;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
 import com.google.photos.library.v1.proto.MediaItem;
+import com.google.photos.library.v1.proto.MediaItemResult;
+
 import gnn.com.photos.model.Photo;
 
 import java.io.IOException;
@@ -47,6 +50,21 @@ public class PhotosRemoteService {
         }
         System.err.println("album not found");
         return null;
+    }
+
+    public void getPhotosFromIds() {
+        // baseUrl expire after 60 minutes
+        ArrayList<String> ids = new ArrayList<>();
+        ids.add("ADoMfeQCtFtIatW-zK6LyG99cV603z25Yha0n_EgY8A419Z5BFAQwd_-HJw4udqBxDyJisrT5WwINegmWOXgUsR5VvUdcjz6lA");
+        ids.add("ADoMfeQhYF7flymP6FB5GzRodCKRRSimZEBgQq5imnoQwSTMNqQTcQbhagU1EPs4gtQqPEwCkc291wSXH-ebIgq5SjTEdH6EUg");
+        ids.add("AZEZERZER");
+        BatchGetMediaItemsResponse response = client.batchGetMediaItems(ids);
+        for (MediaItemResult result :
+                response.getMediaItemResultsList()) {
+            // code == 3 if id does not exist
+            System.out.println(result.getStatus().getCode());
+            System.out.println(result.getMediaItem().getBaseUrl());
+        }
     }
 
 }
