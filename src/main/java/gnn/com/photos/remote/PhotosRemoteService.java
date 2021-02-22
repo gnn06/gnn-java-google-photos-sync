@@ -3,8 +3,8 @@ package gnn.com.photos.remote;
 import com.google.common.collect.ImmutableList;
 import com.google.photos.library.v1.PhotosLibraryClient;
 import com.google.photos.library.v1.internal.InternalPhotosLibraryClient;
-import com.google.photos.library.v1.proto.Album;
-import com.google.photos.library.v1.proto.MediaItem;
+import com.google.photos.types.proto.Album;
+import com.google.photos.types.proto.MediaItem;
 import gnn.com.photos.model.Photo;
 
 import java.io.IOException;
